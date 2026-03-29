@@ -71,20 +71,21 @@
   <div class="container">
     <section class="hero">
       <div class="badge">AI 工具分享（算法研发向）</div>
-      <h1>Trae IDE 常用功能与真实开发案例</h1>
+      <h1>Trae IDE 重点功能与真实开发案例</h1>
       <p class="muted">面向研发的 1 小时分享设计：正式讲解 30 分钟 + 互动答疑 30 分钟。</p>
       <p>
         文档入口：
         <a href="https://docs.trae.cn/ide" target="_blank" rel="noreferrer">Trae IDE 文档</a>。
+        额外参考：<a href="https://qianli-drive.feishu.cn/wiki/JAENwwvKEijha9kZztTcnlcRngd" target="_blank" rel="noreferrer">分享资料（飞书）</a>。
         配套参考：
-        <a href="https://qianli-drive.feishu.cn/wiki/IsbSwZalfiNdNKk1Ldkc3TxCn9e" target="_blank" rel="noreferrer">Trae个人经验分享</a>。
+        <a href="https://pytorch.org/docs/stable/index.html" target="_blank" rel="noreferrer">PyTorch 文档</a>。
       </p>
     </section>
 
     <section class="card">
       <h2>1. 分享目标与时间安排 <span class="time">5分钟</span></h2>
       <ul>
-        <li>聚焦 Trae 中的关键能力并映射到算法研发流程。</li>
+        <li>聚焦 Trae 文档中的关键能力并映射到算法研发流程。</li>
         <li>按“30 分钟主讲 + 30 分钟答疑”组织可落地内容。</li>
         <li>让团队拿走可复用的方法（模板、清单、流程）。</li>
       </ul>
@@ -140,15 +141,16 @@
 
     <section class="grid">
       <article class="card">
-        <h2>3. 案例1：二分类 baseline <span class="time">4分钟</span></h2>
+        <h2>3. 案例1：基础流程 <span class="time">4分钟</span></h2>
         <ul>
           <li>用 <strong>Plan</strong> 拆解数据、训练、评估和交付。</li>
           <li>用 <strong>Spec</strong> 固化输入输出和指标约束。</li>
           <li>在 <strong>Solo</strong> 模式快速产出可运行脚本。</li>
+          <li>参考：<a href="https://qianli-drive.feishu.cn/wiki/JAENwwvKEijha9kZztTcnlcRngd" target="_blank" rel="noreferrer">飞书资料链接</a>。</li>
         </ul>
       </article>
       <article class="card">
-        <h2>4. 案例2：训练异常排查 <span class="time">4分钟</span></h2>
+        <h2>4. 案例2：异常排查 <span class="time">4分钟</span></h2>
         <ul>
           <li>由 <strong>智能体</strong> 分步分析日志并定位 nan 根因。</li>
           <li>用 <strong>上下文压缩</strong>保留关键排障线索。</li>
@@ -156,11 +158,11 @@
         </ul>
       </article>
       <article class="card">
-        <h2>5. 案例3：推理性能优化 <span class="time">4分钟</span></h2>
+        <h2>5. 案例3：新功能添加 <span class="time">4分钟</span></h2>
         <ul>
-          <li>用 <strong>Spec</strong> 定义 P95 延迟与吞吐目标。</li>
-          <li>用 <strong>Skill</strong> 复用 profile 与优化 checklist。</li>
-          <li>通过 <strong>MCP</strong> 接入监控数据做效果回归。</li>
+          <li>用 <strong>Spec</strong> 定义新功能输入/输出与验收边界。</li>
+          <li>结合<strong>个人规则</strong>与<strong>工程规则</strong>统一实现与提交流程。</li>
+          <li>通过 <strong>MCP</strong> 对接 GitLab 的 <code>projectmanagement</code> 做任务追踪。</li>
         </ul>
       </article>
     </section>
