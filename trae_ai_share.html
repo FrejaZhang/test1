@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>算法工程师 AI 工具分享｜Trae 常用功能</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --sub: #9ca3af;
+      --primary: #22d3ee;
+      --accent: #a78bfa;
+      --ok: #34d399;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Microsoft YaHei", Inter, system-ui, sans-serif;
+      background: linear-gradient(120deg, #020617, #0b1120 50%, #111827);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .container {
+      width: min(1100px, 92vw);
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    .hero {
+      background: radial-gradient(circle at top right, rgba(34, 211, 238, 0.2), transparent 45%),
+                  radial-gradient(circle at left bottom, rgba(167, 139, 250, 0.16), transparent 45%),
+                  var(--card);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      border-radius: 18px;
+      padding: 26px;
+      margin-bottom: 18px;
+    }
+    h1 { margin: 0 0 8px; font-size: clamp(24px, 3vw, 36px); }
+    h2 {
+      margin: 0 0 10px;
+      font-size: clamp(18px, 2vw, 24px);
+      color: var(--primary);
+    }
+    h3 { margin: 14px 0 8px; color: #c4b5fd; }
+    p, li { color: var(--text); }
+    .muted { color: var(--sub); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin: 16px 0 20px;
+    }
+    .card {
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 14px;
+      padding: 14px 16px;
+      background: rgba(15, 23, 42, 0.68);
+    }
+    .badge {
+      display: inline-block;
+      border-radius: 999px;
+      border: 1px solid rgba(34, 211, 238, 0.45);
+      color: var(--primary);
+      font-size: 12px;
+      padding: 3px 10px;
+      margin-bottom: 8px;
+    }
+    .time {
+      display: inline-block;
+      border-radius: 8px;
+      background: rgba(52, 211, 153, 0.15);
+      border: 1px solid rgba(52, 211, 153, 0.35);
+      color: var(--ok);
+      font-size: 12px;
+      padding: 2px 8px;
+      margin-left: 8px;
+    }
+    a {
+      color: #67e8f9;
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(103, 232, 249, 0.4);
+    }
+    a:hover { color: #a5f3fc; }
+    code {
+      background: rgba(148, 163, 184, 0.18);
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+    .footer {
+      margin-top: 24px;
+      color: var(--sub);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="badge">AI 工具分享（算法研发向）</div>
+      <h1>Trae 常用功能与真实开发案例</h1>
+      <p class="muted">
+        面向算法工程师的 1 小时分享设计：正式讲解 30 分钟 + 互动答疑 30 分钟。
+      </p>
+      <p>
+        推荐配套资料：
+        <a href="https://platform.openai.com/docs" target="_blank" rel="noreferrer">OpenAI API 文档</a>、
+        <a href="https://docs.python.org/3/" target="_blank" rel="noreferrer">Python 文档</a>、
+        <a href="https://pytorch.org/docs/stable/index.html" target="_blank" rel="noreferrer">PyTorch 文档</a>。
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>1. 分享目标与时间安排 <span class="time">5分钟</span></h2>
+      <ul>
+        <li>明确 Trae 在算法研发流程中的价值：提效、保质、沉淀。</li>
+        <li>理解“30 分钟主讲 + 30 分钟答疑”的节奏设计。</li>
+        <li>建立可落地的 AI 协作方式，而非仅停留在概念层面。</li>
+      </ul>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>2. Trae 常用功能概览 <span class="time">15分钟</span></h2>
+        <ul>
+          <li><strong>对话式代码助手</strong>：快速生成 baseline、解释报错、补齐测试。</li>
+          <li><strong>仓库上下文理解</strong>：基于项目结构回答“入口在哪、链路怎么走”。</li>
+          <li><strong>编辑与重构</strong>：自动加注释、类型、规范化目录与命名。</li>
+          <li><strong>调试辅助</strong>：定位 <code>loss=nan</code>、OOM、shape mismatch 等问题。</li>
+          <li><strong>脚本与文档生成</strong>：实验脚本、README、交接文档模板。</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>3. 案例 1：二分类 baseline <span class="time">4分钟</span></h2>
+        <ul>
+          <li>任务：用户流失预测模型，从 0 到 1 搭建。</li>
+          <li>AI 协助：数据预处理、训练脚本、AUC/F1 评估与报告模板。</li>
+          <li>结果：在 1 个迭代内产出可运行版本与初版结论。</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>4. 案例 2：训练异常排查 <span class="time">4分钟</span></h2>
+        <ul>
+          <li>问题：第 3 个 epoch 出现 <code>nan</code>。</li>
+          <li>AI 协助：日志分析、插入数值稳定策略、给出复现脚本。</li>
+          <li>结果：形成“发现问题 → 复现 → 修复验证”的闭环流程。</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>5. 案例 3：推理性能优化 <span class="time">4分钟</span></h2>
+        <ul>
+          <li>问题：线上延迟超标。</li>
+          <li>AI 协助：profile 拆解、优化建议（batching/ONNX/FP16/缓存）。</li>
+          <li>结果：输出可执行优化路线图和对比实验模板。</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>6. 方法论：让 AI 真正可用 <span class="time">3分钟</span></h2>
+      <h3>Prompt 四段式</h3>
+      <ul>
+        <li><strong>背景</strong>：任务目标与业务约束。</li>
+        <li><strong>上下文</strong>：代码路径、报错日志、输入输出格式。</li>
+        <li><strong>约束</strong>：性能指标、编码规范、运行环境。</li>
+        <li><strong>输出</strong>：要求 code diff / 脚本 / 表格 / 结论。</li>
+      </ul>
+      <h3>质量保障</h3>
+      <ul>
+        <li>关键算法逻辑必须人工 review。</li>
+        <li>核心路径必须有单测与回归指标验证。</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>7. 互动答疑建议 <span class="time">30分钟</span></h2>
+      <ol>
+        <li>算法团队最优先落地哪 3 个 AI 能力？</li>
+        <li>如何平衡“开发速度”和“模型可靠性”？</li>
+        <li>哪些任务可以 AI 主导，哪些必须人工主导？</li>
+        <li>如何建设团队级 prompt 与脚本资产库？</li>
+      </ol>
+    </section>
+
+    <p class="footer">
+      建议在分享中穿插现场演示：让 Trae 直接根据一个真实项目目录生成排障 checklist，
+      会比纯讲功能更能打动算法同学。
+    </p>
+  </div>
+</body>
+</html>
