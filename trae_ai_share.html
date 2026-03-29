@@ -74,11 +74,11 @@
       <h1>Trae IDE 重点功能与真实开发案例</h1>
       <p class="muted">面向研发的 1 小时分享设计：正式讲解 30 分钟 + 互动答疑 30 分钟。</p>
       <p>
-        文档入口：
+        配套参考：
         <a href="https://docs.trae.cn/ide" target="_blank" rel="noreferrer">Trae IDE 文档</a>。
         额外参考：<a href="https://qianli-drive.feishu.cn/wiki/JAENwwvKEijha9kZztTcnlcRngd" target="_blank" rel="noreferrer">分享资料（飞书）</a>。
-        配套参考：
-        <a href="https://pytorch.org/docs/stable/index.html" target="_blank" rel="noreferrer">PyTorch 文档</a>。
+        其他参考：
+        <a href="https://qianli-drive.feishu.cn/wiki/IHOswrF6piGQDNkvt2VckEo7n2b" target="_blank" rel="noreferrer">其他</a>。
       </p>
     </section>
 
@@ -172,33 +172,7 @@
       <ul>
         <li><strong>Prompt 四段式</strong>：背景 / 上下文 / 约束 / 输出。</li>
         <li><strong>先小后大</strong>：MVP → 边界条件 → 性能优化 → 单测文档。</li>
-      </ul>
-      <h3>互动答疑建议话题</h3>
-      <ol>
-        <li>Solo、Agent、Plan/Spec 在不同项目阶段怎么搭配？</li>
-        <li>如何把 MCP + Skill 落地为团队资产？</li>
-        <li>上下文压缩对长链路调参与故障排查的最佳实践是什么？</li>
-        <li>沙箱验证应该卡在哪些关键环节？</li>
-        <li>算法团队最该优先落地哪些 AI 能力？</li>
-        <li>如何平衡“开发效率”与“模型可靠性”？</li>
-        <li>哪些任务适合全交给 AI，哪些必须人工主导？</li>
-        <li>如何在团队内建立 prompt 与脚本资产库？</li>
-        <li>从个人提效到团队流程改造，第一步做什么？</li>
-        <li>Solo、Agent、Plan/Spec 与 MCP/Skill 如何组合落地？</li>
-      </ol>
-
-      <h3>Q1-Q10 参考回答（含简单例子）</h3>
-      <ul>
-        <li><strong>Q1 阶段搭配</strong>：需求期用 Plan/Spec、开发期用 Solo、联调期用 Agent。例：先写重排 Spec，再用 Solo 产出 baseline，Agent 回归验证。</li>
-        <li><strong>Q2 团队资产化</strong>：MCP 连接内部系统，Skill 固化高频流程。例：训练后自动拉取指标并生成统一周报。</li>
-        <li><strong>Q3 压缩实践</strong>：每轮保留“改动-结果-结论”，关键节点快照。例：5 轮调参压成 6 行摘要继续迭代。</li>
-        <li><strong>Q4 沙箱卡点</strong>：新依赖前、高风险脚本前、合并回归前。例：全量清洗前先沙箱跑 1% 抽样。</li>
-        <li><strong>Q5 优先能力</strong>：先 Plan/Spec，再 Agent+沙箱，最后 MCP+Skill。例：先统一实验 Spec 降低指标口径争议。</li>
-        <li><strong>Q6 效率与可靠性</strong>：AI 加速实现，人工兜底关键决策。例：AI 改特征代码，人工确认线上线下一致性。</li>
-        <li><strong>Q7 人机分工</strong>：重复任务交 AI，业务与风险决策由人工主导。例：是否切主模型必须负责人审批。</li>
-        <li><strong>Q8 资产库建设</strong>：建立 prompts/scripts/examples/CHANGELOG。例：直接复用“nan 排障 prompt + 脚本”快速定位问题。</li>
-        <li><strong>Q9 团队改造第一步</strong>：先做高频低风险试点并量化收益。例：先做实验报告自动化，再扩展到发布检查。</li>
-        <li><strong>Q10 组合落地</strong>：Plan/Spec → Solo → Agent → MCP → Skill。例：新增特征看板后沉淀为可复用 Skill。</li>
+        <li><strong>Q&A 建议</strong>：Solo、Agent、Plan/Spec 与 MCP/Skill 如何组合落地。</li>
       </ul>
     </section>
 
