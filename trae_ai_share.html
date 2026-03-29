@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>算法工程师 AI 工具分享｜Trae IDE 文档重点功能</title>
+  <style>
+    :root {
+      --card: #111827;
+      --text: #e5e7eb;
+      --sub: #9ca3af;
+      --primary: #22d3ee;
+      --ok: #34d399;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Microsoft YaHei", Inter, system-ui, sans-serif;
+      background: linear-gradient(120deg, #020617, #0b1120 50%, #111827);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .container { width: min(1120px, 92vw); margin: 0 auto; padding: 28px 0 48px; }
+    .hero {
+      background: radial-gradient(circle at top right, rgba(34, 211, 238, 0.2), transparent 45%),
+                  radial-gradient(circle at left bottom, rgba(167, 139, 250, 0.16), transparent 45%),
+                  var(--card);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      border-radius: 18px;
+      padding: 26px;
+      margin-bottom: 18px;
+    }
+    h1 { margin: 0 0 8px; font-size: clamp(24px, 3vw, 36px); }
+    h2 { margin: 0 0 10px; font-size: clamp(18px, 2vw, 24px); color: var(--primary); }
+    h3 { margin: 14px 0 8px; color: #c4b5fd; }
+    p, li { color: var(--text); }
+    .muted { color: var(--sub); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 14px; margin: 16px 0 20px; }
+    .card {
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 14px;
+      padding: 14px 16px;
+      background: rgba(15, 23, 42, 0.68);
+    }
+    .badge {
+      display: inline-block;
+      border-radius: 999px;
+      border: 1px solid rgba(34, 211, 238, 0.45);
+      color: var(--primary);
+      font-size: 12px;
+      padding: 3px 10px;
+      margin-bottom: 8px;
+    }
+    .time {
+      display: inline-block;
+      border-radius: 8px;
+      background: rgba(52, 211, 153, 0.15);
+      border: 1px solid rgba(52, 211, 153, 0.35);
+      color: var(--ok);
+      font-size: 12px;
+      padding: 2px 8px;
+      margin-left: 8px;
+    }
+    a { color: #67e8f9; text-decoration: none; border-bottom: 1px dashed rgba(103, 232, 249, 0.4); }
+    a:hover { color: #a5f3fc; }
+    code { background: rgba(148, 163, 184, 0.18); padding: 2px 6px; border-radius: 6px; }
+    .footer { margin-top: 24px; color: var(--sub); font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="badge">AI 工具分享（算法研发向）</div>
+      <h1>Trae IDE 文档重点功能与真实开发案例</h1>
+      <p class="muted">面向算法工程师的 1 小时分享设计：正式讲解 30 分钟 + 互动答疑 30 分钟。</p>
+      <p>
+        文档入口：
+        <a href="https://docs.trae.cn/ide" target="_blank" rel="noreferrer">Trae IDE 文档</a>。
+        配套参考：
+        <a href="https://pytorch.org/docs/stable/index.html" target="_blank" rel="noreferrer">PyTorch 文档</a>。
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>1. 分享目标与时间安排 <span class="time">5分钟</span></h2>
+      <ul>
+        <li>聚焦 Trae 文档中的关键能力并映射到算法研发流程。</li>
+        <li>按“30 分钟主讲 + 30 分钟答疑”组织可落地内容。</li>
+        <li>让团队拿走可复用的方法（模板、清单、流程）。</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>2. Trae IDE 文档重点功能汇总 <span class="time">15分钟</span></h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Solo 模式</h3>
+          <ul>
+            <li>强调个人任务闭环，减少上下文切换。</li>
+            <li>适合快速产出 baseline 与实验脚本。</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Plan + Spec</h3>
+          <ul>
+            <li>先拆解计划，再定义可执行规格。</li>
+            <li>先定指标和验收标准，再写代码。</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>MCP + Skill</h3>
+          <ul>
+            <li>MCP：接入外部工具与数据源。</li>
+            <li>Skill：沉淀可复用工作流（如特征巡检）。</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>上下文压缩</h3>
+          <ul>
+            <li>长链路任务保留关键事实与结论。</li>
+            <li>多轮调参时提升对话连续性。</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>沙箱</h3>
+          <ul>
+            <li>在受控环境执行脚本与命令验证。</li>
+            <li>降低误改主环境和依赖污染风险。</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>智能体（Agent）</h3>
+          <ul>
+            <li>适合多步骤任务自动推进。</li>
+            <li>可串联“读代码→改代码→验证→总结”。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>3. 案例1：二分类 baseline <span class="time">4分钟</span></h2>
+        <ul>
+          <li>用 <strong>Plan</strong> 拆解数据、训练、评估和交付。</li>
+          <li>用 <strong>Spec</strong> 固化输入输出和指标约束。</li>
+          <li>在 <strong>Solo</strong> 模式快速产出可运行脚本。</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>4. 案例2：训练异常排查 <span class="time">4分钟</span></h2>
+        <ul>
+          <li>由 <strong>智能体</strong> 分步分析日志并定位 nan 根因。</li>
+          <li>用 <strong>上下文压缩</strong>保留关键排障线索。</li>
+          <li>在 <strong>沙箱</strong> 先验证修复方案再回主环境。</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>5. 案例3：推理性能优化 <span class="time">4分钟</span></h2>
+        <ul>
+          <li>用 <strong>Spec</strong> 定义 P95 延迟与吞吐目标。</li>
+          <li>用 <strong>Skill</strong> 复用 profile 与优化 checklist。</li>
+          <li>通过 <strong>MCP</strong> 接入监控数据做效果回归。</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>6. 方法论与答疑引导 <span class="time">33分钟</span></h2>
+      <ul>
+        <li><strong>Prompt 四段式</strong>：背景 / 上下文 / 约束 / 输出。</li>
+        <li><strong>先小后大</strong>：MVP → 边界条件 → 性能优化 → 单测文档。</li>
+        <li><strong>Q&A 建议</strong>：Solo、Agent、Plan/Spec 与 MCP/Skill 如何组合落地。</li>
+      </ul>
+    </section>
+
+    <p class="footer">建议加一段现场演示：让 Trae 根据真实仓库自动输出实验复盘模板，现场效果会更好。</p>
+  </div>
+</body>
+</html>
